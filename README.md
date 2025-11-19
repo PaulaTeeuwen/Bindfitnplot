@@ -20,6 +20,11 @@ The fitting routine has been validated against previous experimental datasets an
 
 The main features and required data specifiers of the fitting program are detailed in the sections below.
 
+## Publication
+https://www.nature.com/articles/s41467-020-18596-1
+
+---
+
 ## Fitting Methods
 
 The script provides three fitting functions corresponding to three different binding equations. Each function computes intermediate concentrations (such as \([G]\) or \([HG]\)) using the appropriate analytical expressions and then fits the model parameters to the experimental data.
@@ -53,14 +58,6 @@ The parameters fitted are:
 
 Because this model includes **five fitting parameters**, it is easier to obtain seemingly perfect fits, but this can reduce the accuracy of the resulting \(K_a\). Only **ratios** such as \(k_H/k_H^0\) and \(k_{HG}/k_H^0\) are physically meaningful.  
 If \(k_H/k_H^0 \approx 1\), the assumption of **no dynamic quenching** of the host is justified.
-
----
-
-
-
-
-## Publication
-https://www.nature.com/articles/s41467-020-18596-1
 
 ## Fitting Program: Data Specifiers
 
@@ -159,8 +156,6 @@ Besides selecting the fitting formula and choosing whether to optimize \(F₀\),
   - Prevents errors if significant red/blue shifts occur.  
 - **`max_wl`** — Automatically identifies the maximum intensity near the target wavelength.  
   - Corrects for small wavelength shifts that would otherwise cause systematically low intensities.
-
----
 
 ## Recommended Settings
 
