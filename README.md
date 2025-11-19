@@ -1,5 +1,24 @@
-## Bindfitnplot
-This repository contains the code written for my Bachelor's Thesis at the Nolte Group.
+## Overview
+
+This repository contains the code developed for my Bachelor's thesis in the Nolte Group.
+
+The core script, **`Bindfitnplot.py`**, automates the calculation of association constants from triplicate fluorescence titrations. The program evaluates three different 1:1 binding models:
+
+- **Stern–Volmer**
+- **Tsukube**
+- **Connors**
+
+For each model, the script fits the corresponding binding isotherms and determines parameters such as:
+
+- **Ka** — association constant  
+- **F₀** — fluorescence of the host in the absence of guest  
+- Additional proportionality constants depending on the chosen model  
+
+The script also calculates the initial concentrations \([H]_0\) and \([G]_0\), which are required as input for all three binding equations.
+
+The fitting routine has been validated against previous experimental datasets and existing binding-analysis programs. These comparisons show that the program performs reliably for **1:1 host–guest complexes**.
+
+The main features and required data specifiers of the fitting program are detailed in the sections below.
 
 ## Publication
 https://www.nature.com/articles/s41467-020-18596-1
