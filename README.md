@@ -25,7 +25,7 @@ https://www.nature.com/articles/s41467-020-18596-1
 
 ---
 
-## Fitting Program: Data Specifiers
+## Data Specifiers
 
 The fitting program uses a set of data specifiers that must be provided for each experiment.  
 Below is an overview of all required fields in the order they appear in the script.
@@ -78,7 +78,7 @@ Below is an overview of all required fields in the order they appear in the scri
 | **Guest_add_i** | Volume of guest added per addition and per spectrum \(i\) (µL). |
 
 
-## Fitting Program: Fitting Parameters
+## Fitting Parameters
 
 The script provides three fitting functions corresponding to three different binding equations. Each function computes intermediate concentrations (such as \([G]\) or \([HG]\)) using the appropriate analytical expressions and then fits the model parameters to the experimental data. These fitted parameters are written to the output file. All formulas assume 1:1 binding.
 
@@ -150,7 +150,7 @@ These graphs show how the signal evolves throughout the titration and form the b
 The third output figure overlays the fitted curves on top of the experimental binding isotherms.  
 This comparison allows the user to verify the quality of the fit and determine whether the resulting association constants are reliable.
 
-## Output File
+### 4. Output File
 
 In addition to the figures, the script produces an output file.  
 This file contains:
