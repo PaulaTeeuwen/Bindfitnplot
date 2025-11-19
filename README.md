@@ -167,3 +167,34 @@ Comparison tests show that the following combination provides the most reliable 
 - **`single_wl`** method  
 
 Under these conditions, the program can follow changes in fluorescence at any wavelength without requiring quenching behaviour, as the silent-complex assumption is not applied.
+
+## Output
+
+The fitting program generates three sets of figures along with a detailed output file.
+
+### 1. Spectra Overview
+For each titration set, all recorded spectra are plotted together (intensity vs. wavelength).  
+These superimposed plots make it easy to visualise how the fluorescence signal changes as increasing amounts of guest are added.
+
+### 2. Binding Isotherms
+For each titration and for each monitored wavelength, the program plots the binding isotherm (intensity vs. equivalents \([G]_0/[H]_0\)).  
+These graphs show how the signal evolves throughout the titration and form the basis of the fitting procedure.
+
+### 3. Fitted Curves
+The third output figure overlays the fitted curves on top of the experimental binding isotherms.  
+This comparison allows the user to verify the quality of the fit and determine whether the resulting association constants are reliable.
+
+## Output File
+
+In addition to the figures, the script produces an output file.  
+This file contains:
+
+- All settings used during the run  
+- Input values  
+- Initial parameter guesses  
+- Calculated concentrations  
+- Guest/host equivalents  
+- Fitted parameters **per titration**  
+- **Average** fitted parameters with **standard deviations**
+
+The output file is automatically saved in the same directory that contains the fluorescence data.
