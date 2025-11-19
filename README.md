@@ -1,7 +1,7 @@
-# Bindfitnplot
-This repository contains the code written for my Bachelor's Thesis at the Nolte Group
+## Bindfitnplot
+This repository contains the code written for my Bachelor's Thesis at the Nolte Group.
 
-# Publication
+## Publication
 https://www.nature.com/articles/s41467-020-18596-1
 
 ## Fitting Program: Data Specifiers
