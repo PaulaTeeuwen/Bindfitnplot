@@ -119,7 +119,7 @@ Besides selecting the fitting formula and choosing whether to optimize \(F₀\),
 
 ### Intensity Extraction Method
 - **`single_wl`** — Extracts intensity at a fixed wavelength for each peak.  
-  - Prevents errors if significant red/blue shifts occur.  
+  - Prevents errors if significant red/blue shifts occur.
 - **`max_wl`** — Automatically identifies the maximum intensity near the target wavelength.  
   - Corrects for small wavelength shifts that would otherwise cause systematically low intensities.
 
@@ -127,12 +127,12 @@ Besides selecting the fitting formula and choosing whether to optimize \(F₀\),
 
 Comparison tests show that the following combination provides the most reliable results:
 
-- **Connors** model  
-- **Smoothing** enabled  
-- **Optimize \(F₀\)**  
-- **`single_wl`** method  
+- Connors model  
+- Smoothing enabled  
+- Optimize \F₀\  
+- `single_wl' method  
 
-Under these conditions, the program can follow changes in fluorescence at any wavelength without requiring quenching behaviour, as the silent-complex assumption is not applied.
+
 
 ## Output
 
