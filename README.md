@@ -30,7 +30,6 @@ https://www.nature.com/articles/s41467-020-18596-1
 The script provides three fitting functions corresponding to three different binding equations. Each function computes intermediate concentrations (such as \([G]\) or \([HG]\)) using the appropriate analytical expressions and then fits the model parameters to the experimental data.
 
 ### 1. `Volmer_Stern`
-This function fits the data using Equation 26. The free guest concentration \([G]\) is calculated using Equation 9.  
 The fitted parameters are:
 
 - **Ka** — association constant  
@@ -39,7 +38,6 @@ The fitted parameters are:
 Although the script allows the user to fix \(F₀\) at the intensity of the initial peaks, an internal comparison check is implemented. For best performance, it is recommended to **let the program optimize \(F₀\)**.
 
 ### 2. `Tsukube`
-This function fits the data using Equation 24. The concentration of the host–guest complex \([HG]\) is computed via Equation 12.  
 The fitted parameters are:
 
 - **Ka**
@@ -47,7 +45,6 @@ The fitted parameters are:
 - **kΔHG** — proportionality constant \(k_{\Delta HG}\)
 
 ### 3. `Connors`
-This is the most flexible (and most parameter-rich) fitting function. It fits the data using Equation 25, again obtaining \([HG]\) from Equation 12.  
 The parameters fitted are:
 
 - **kH** — proportionality constant of free host in presence of guest  
