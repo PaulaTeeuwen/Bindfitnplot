@@ -25,37 +25,6 @@ https://www.nature.com/articles/s41467-020-18596-1
 
 ---
 
-## Fitting Methods
-
-The script provides three fitting functions corresponding to three different binding equations. Each function computes intermediate concentrations (such as \([G]\) or \([HG]\)) using the appropriate analytical expressions and then fits the model parameters to the experimental data.
-
-### 1. `Volmer_Stern`
-The fitted parameters are:
-
-- **Ka** — association constant  
-- **F₀** — fluorescence of the host before any guest is added  
-
-Although the script allows the user to fix \(F₀\) at the intensity of the initial peaks, an internal comparison check is implemented. For best performance, it is recommended to **let the program optimize \(F₀\)**.
-
-### 2. `Tsukube`
-The fitted parameters are:
-
-- **Ka**
-- **F₀**
-- **kΔHG** — proportionality constant \(k_{\Delta HG}\)
-
-### 3. `Connors`
-The parameters fitted are:
-
-- **kH** — proportionality constant of free host in presence of guest  
-- **kH0** — proportionality constant for the initial free host  
-- **kHG** — proportionality constant of the complex  
-- **Ka**  
-- **F₀**
-
-Because this model includes **five fitting parameters**, it is easier to obtain seemingly perfect fits, but this can reduce the accuracy of the resulting \(K_a\). Only **ratios** such as \(k_H/k_H^0\) and \(k_{HG}/k_H^0\) are physically meaningful.  
-If \(k_H/k_H^0 \approx 1\), the assumption of **no dynamic quenching** of the host is justified.
-
 ## Fitting Program: Data Specifiers
 
 The fitting program uses a set of data specifiers that must be provided for each experiment.  
@@ -109,19 +78,18 @@ Below is an overview of all required fields in the order they appear in the scri
 | **Guest_add_i** | Volume of guest added per addition and per spectrum \(i\) (µL). |
 
 
----
-
 ## Fitting Program: Fitting Parameters
 
-The script `bindfitnplot.py` fits a selection of parameters depending on the chosen model.  
-These fitted parameters are written to the output file.  
-All formulas assume 1:1 binding.
+The script provides three fitting functions corresponding to three different binding equations. Each function computes intermediate concentrations (such as \([G]\) or \([HG]\)) using the appropriate analytical expressions and then fits the model parameters to the experimental data. These fitted parameters are written to the output file. All formulas assume 1:1 binding.
+
 
 ### 1. Stern–Volmer
 | Parameter | Meaning |
 |----------|----------|
 | **Ka** | Association constant \( K_a \) |
 | **F0** | Fluorescence of host solution before guest addition \( F_0 \) |
+
+Although the script allows the user to fix \(F₀\) at the intensity of the initial peaks, an internal comparison check is implemented. For best performance, it is recommended to **let the program optimize \(F₀\)**.
 
 ### 2. Tsukube
 | Parameter | Meaning |
@@ -139,6 +107,7 @@ All formulas assume 1:1 binding.
 | **kH0** | Proportionality constant for initial free host \( k_H^0 \) |
 | **kHG** | Proportionality constant of the complex \( k_{HG} \) |
 
+Because this model includes **five fitting parameters**, it is easier to obtain seemingly perfect fits, but this can reduce the accuracy of the resulting \(K_a\). Only **ratios** such as \(k_H/k_H^0\) and \(k_{HG}/k_H^0\) are physically meaningful. If \(k_H/k_H^0 \approx 1\), the assumption of **no dynamic quenching** of the host is justified.
 
 ## Additional Settings
 
