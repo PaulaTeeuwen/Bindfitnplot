@@ -16,8 +16,9 @@ For each model, the script fits the corresponding binding isotherms and determin
 
 The script also calculates the initial concentrations \([H]_0\) and \([G]_0\), which are required as input for all three binding equations.
 
-The main features and required data specifiers of the fitting program are detailed in the sections below.
+The fitting routine has been validated against previous experimental datasets and existing binding-analysis programs. These comparisons show that the program performs reliably for **1:1 host–guest complexes**.
 
+The main features and required data specifiers of the fitting program are detailed in the sections below.
 ## Publication
 https://www.nature.com/articles/s41467-020-18596-1
 
