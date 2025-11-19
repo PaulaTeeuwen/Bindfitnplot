@@ -14,7 +14,7 @@ For each model, the script fits the corresponding binding isotherms and determin
 - **F₀** — fluorescence of the host in the absence of guest  
 - Additional proportionality constants depending on the chosen model  
 
-The script also calculates the initial concentrations \([H]_0\) and \([G]_0\), which are required as input for all three binding equations.
+The script also calculates the initial concentrations \([H]_0\) and \([G]_0\) based on the experimental conditions. These values are required as input for all three binding equations.
 
 The fitting routine has been validated against previous experimental datasets and existing binding-analysis programs. These comparisons show that the program performs reliably for **1:1 host–guest complexes**.
 
