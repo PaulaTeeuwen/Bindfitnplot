@@ -20,7 +20,7 @@ Below is an overview of all required fields in the order they appear in the scri
 | Specifier | Description |
 |----------|-------------|
 | **M_Host** | Host molecular weight (g/mol) |
-| **m_Hstock** | Mass of host dissolved (g) |
+| **m_Hstock** | Mass of dissolved Host (g) |
 | **V_solv_Hstock** | Volume of host stock solution (mL) |
 | **m_solv_Hstock** | Mass of host stock solution (g) |
 
@@ -28,7 +28,7 @@ Below is an overview of all required fields in the order they appear in the scri
 | Specifier | Description |
 |----------|-------------|
 | **M_Guest** | Guest molecular weight (g/mol) |
-| **m_Gstock** | Mass of guest dissolved (g) |
+| **m_Gstock** | Mass of dissolved Guest (g) |
 | **V_solv_Gstock** | Volume of guest stock solution (mL) |
 | **m_solv_Gstock** | Mass of guest stock solution (g) |
 
@@ -45,6 +45,7 @@ Below is an overview of all required fields in the order they appear in the scri
 ### Measurement Settings
 | Specifier | Description |
 |----------|-------------|
+| **T** | Temperature in degrC |
 | **n** | Number of measurement sets (triplicate: `n = 3`) |
 | **m** | Number of spectra measured per set |
 | **lambda1** | First wavelength monitored (e.g., 650 nm) |
@@ -53,7 +54,8 @@ Below is an overview of all required fields in the order they appear in the scri
 | **smoothening** | Boolean: whether to smooth spectra before extracting data |
 | **formula** | Fitting formula: `Stern_Volmer`, `Tsukube`, or `Connors` |
 | **method** | Measurement mode: `"single_wl"` (single wavelength) or `"max_wl"` (peak maxima) |
-| **Guest_add_i** | Volume of guest added per addition and per spectrum \(i\) (µL) |
+| **Guest_add_i** | Volume of guest added per addition and per spectrum \(i\) (µL). |
+
 
 ---
 
