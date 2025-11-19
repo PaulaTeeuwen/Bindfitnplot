@@ -19,6 +19,46 @@ The script also calculates the initial concentrations \([H]_0\) and \([G]_0\), w
 The fitting routine has been validated against previous experimental datasets and existing binding-analysis programs. These comparisons show that the program performs reliably for **1:1 host–guest complexes**.
 
 The main features and required data specifiers of the fitting program are detailed in the sections below.
+
+## Fitting Methods
+
+The script provides three fitting functions corresponding to three different binding equations. Each function computes intermediate concentrations (such as \([G]\) or \([HG]\)) using the appropriate analytical expressions and then fits the model parameters to the experimental data.
+
+### 1. `Volmer_Stern`
+This function fits the data using Equation 26. The free guest concentration \([G]\) is calculated using Equation 9.  
+The fitted parameters are:
+
+- **Ka** — association constant  
+- **F₀** — fluorescence of the host before any guest is added  
+
+Although the script allows the user to fix \(F₀\) at the intensity of the initial peaks, an internal comparison check is implemented. For best performance, it is recommended to **let the program optimize \(F₀\)**.
+
+### 2. `Tsukube`
+This function fits the data using Equation 24. The concentration of the host–guest complex \([HG]\) is computed via Equation 12.  
+The fitted parameters are:
+
+- **Ka**
+- **F₀**
+- **kΔHG** — proportionality constant \(k_{\Delta HG}\)
+
+### 3. `Connors`
+This is the most flexible (and most parameter-rich) fitting function. It fits the data using Equation 25, again obtaining \([HG]\) from Equation 12.  
+The parameters fitted are:
+
+- **kH** — proportionality constant of free host in presence of guest  
+- **kH0** — proportionality constant for the initial free host  
+- **kHG** — proportionality constant of the complex  
+- **Ka**  
+- **F₀**
+
+Because this model includes **five fitting parameters**, it is easier to obtain seemingly perfect fits, but this can reduce the accuracy of the resulting \(K_a\). Only **ratios** such as \(k_H/k_H^0\) and \(k_{HG}/k_H^0\) are physically meaningful.  
+If \(k_H/k_H^0 \approx 1\), the assumption of **no dynamic quenching** of the host is justified.
+
+---
+
+
+
+
 ## Publication
 https://www.nature.com/articles/s41467-020-18596-1
 
@@ -104,3 +144,31 @@ All formulas assume 1:1 binding.
 | **kH** | Proportionality constant of free host in presence of guest \( k_H \) |
 | **kH0** | Proportionality constant for initial free host \( k_H^0 \) |
 | **kHG** | Proportionality constant of the complex \( k_{HG} \) |
+
+
+## Additional Settings
+
+Besides selecting the fitting formula and choosing whether to optimize \(F₀\), the program provides two more user-adjustable settings:
+
+### Smoothing
+- **Enabled:** Noise is reduced before extracting intensities, preventing artificially high or low values.  
+- **Disabled:** Raw peak intensities are used.
+
+### Intensity Extraction Method
+- **`single_wl`** — Extracts intensity at a fixed wavelength for each peak.  
+  - Prevents errors if significant red/blue shifts occur.  
+- **`max_wl`** — Automatically identifies the maximum intensity near the target wavelength.  
+  - Corrects for small wavelength shifts that would otherwise cause systematically low intensities.
+
+---
+
+## Recommended Settings
+
+Comparison tests show that the following combination provides the most reliable results:
+
+- **Connors** model  
+- **Smoothing** enabled  
+- **Optimize \(F₀\)**  
+- **`single_wl`** method  
+
+Under these conditions, the program can follow changes in fluorescence at any wavelength without requiring quenching behaviour, as the silent-complex assumption is not applied.
