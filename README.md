@@ -86,28 +86,28 @@ The script provides three fitting functions corresponding to three different bin
 ### 1. Stern–Volmer
 | Parameter | Meaning |
 |----------|----------|
-| **Ka** | Association constant \( K_a \) |
-| **F0** | Fluorescence of host solution before guest addition \( F_0 \) |
+| **Ka** | Association constant |
+| **F0** | Fluorescence of host solution before guest addition  |
 
 Although the script allows the user to fix \(F₀\) at the intensity of the initial peaks, an internal comparison check is implemented. For best performance, it is recommended to **let the program optimize \(F₀\)**.
 
 ### 2. Tsukube
 | Parameter | Meaning |
 |----------|----------|
-| **Ka** | Association constant \( K_a \) |
-| **F0** | Initial fluorescence \( F_0 \) |
-| **kDHG** | Proportionality constant \( k_{\Delta HG} = k_{HG} - k_{H} \) |
+| **Ka** | Association constant |
+| **F0** | Initial fluorescence |
+| **kDHG** | Proportionality constant $k_{\Delta HG} = k_{HG} - k_{H}$ |
 
 ### 3. Connors
 | Parameter | Meaning |
 |----------|----------|
-| **Ka** | Association constant \( K_a \) |
-| **F0** | Initial fluorescence \( F_0 \) |
-| **kH** | Proportionality constant of free host in presence of guest \( k_H \) |
-| **kH0** | Proportionality constant for initial free host \( k_H^0 \) |
-| **kHG** | Proportionality constant of the complex \( k_{HG} \) |
+| **Ka** | Association constant |
+| **F0** | Initial fluorescence  |
+| **kH** | Proportionality constant of free host in presence of guest  |
+| **kH0** | Proportionality constant for initial free host |
+| **kHG** | Proportionality constant of the complex |
 
-Because this model includes **five fitting parameters**, it is easier to obtain seemingly perfect fits, but this can reduce the accuracy of the resulting \(K_a\). Only **ratios** such as \(k_H/k_H^0\) and \(k_{HG}/k_H^0\) are physically meaningful. If \(k_H/k_H^0 \approx 1\), the assumption of **no dynamic quenching** of the host is justified.
+Because this model includes **five fitting parameters**, it is easier to obtain seemingly perfect fits, but this can reduce the accuracy of the resulting $K_a$. Only **ratios** such as $k_H/k_H^0$ and $k_{HG}/k_H^0$ are physically meaningful. If $k_H/k_H^0 \approx 1$, the assumption of **no dynamic quenching** of the host is justified.
 
 ## Additional Settings
 
