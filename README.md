@@ -2,7 +2,7 @@
 
 This repository contains the code developed for my Bachelor's thesis in the Nolte Group.
 
-The core script, **`Bindfitnplot.py`**, automates the calculation of association constants from triplicate fluorescence titrations. The program evaluates three different 1:1 binding models:
+The **`Bindfitnplot.py`** script automates the calculation of association constants from triplicate fluorescence titrations. The program evaluates three different 1:1 binding models:
 
 - **Stern–Volmer**
 - **Tsukube**
